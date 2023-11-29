@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/CAW_ScrollView"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<!--TODO: Разметка БЖУ-->
+    <LinearLayout
+        android:id="@+id/caw_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/caw_layout_statsbuttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <ImageButton
+                android:id="@+id/caw_button_dailystats"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/caw_daily_stats" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+            <ImageButton
+                android:id="@+id/caw_button_graphs"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:src="@drawable/caw_graphs" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/caw_layout_totalcalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/yellow"
+                android:layout_marginBottom="10dp"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:text="Всего"
+                    android:textSize="20sp" />
+
+                <ProgressBar
+                    android:id="@+id/caw_totalcalories_progressbar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:progress="0"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/caw_textview_totalcalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10sp"
+                    android:autoSizeMaxTextSize="20sp"
+                    android:gravity="center"
+                    android:text="0 из 2000" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/caw_layout_breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/orange"
+                android:layout_marginTop="5dp"
+                android:weightSum="10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/caw_breakfast" />
+                <LinearLayout
+                    android:id="@+id/caw_breakfast_layout_calories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6.8"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Завтрак"
+                        android:textSize="20sp"
+                        android:typeface="monospace" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10" />
+
+                    <TextView
+                        android:id="@+id/caw_breakfast_textview_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:typeface="monospace"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:text="0" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/caw_breakfast_layout_addcalories"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                <Button
+                    android:id="@+id/caw_breakfast_button_addcalories"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/caw_calories_add_button" />
+
+                    <Button
+                        android:id="@+id/caw_breakfast_button_extend"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/caw_show_foods_button" />
+                </LinearLayout>
+            </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/caw_breakfast_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_gravity="center"
+                    />
+            <LinearLayout
+                android:id="@+id/caw_layout_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/green"
+                android:weightSum="10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/caw_lunch" />
+                <LinearLayout
+                    android:id="@+id/caw_lunch_layout_calories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6.8"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Обед"
+                        android:textSize="20sp"
+                        android:typeface="monospace" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10" />
+
+                    <TextView
+                        android:id="@+id/caw_lunch_textview_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:typeface="monospace"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:text="0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caw_lunch_layout_addcalories"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/caw_lunch_button_addcalories"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/caw_calories_add_button" />
+                    <Button
+                        android:id="@+id/caw_lunch_button_extend"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/caw_show_foods_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/caw_lunch_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                />
+            <LinearLayout
+                android:id="@+id/caw_layout_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/aqua"
+                android:weightSum="10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/caw_dinner" />
+                <LinearLayout
+                    android:id="@+id/caw_dinner_layout_calories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6.8"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Ужин"
+                        android:textSize="20sp"
+                        android:typeface="monospace" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10" />
+
+                    <TextView
+                        android:id="@+id/caw_dinner_textview_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:typeface="monospace"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:text="0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caw_dinner_layout_addcalories"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/caw_dinner_button_addcalories"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/caw_calories_add_button" />
+                    <Button
+                        android:id="@+id/caw_dinner_button_extend"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/caw_show_foods_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/caw_dinner_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                />
+            <LinearLayout
+                android:id="@+id/caw_layout_otherfoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/red"
+                android:weightSum="10"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/caw_otherfoods" />
+                <LinearLayout
+                    android:id="@+id/caw_otherfoods_layout_calories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6.8"
+                    android:weightSum="10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Другое"
+                        android:textSize="20sp"
+                        android:typeface="monospace" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10" />
+
+                    <TextView
+                        android:id="@+id/caw_otherfoods_textview_calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:typeface="monospace"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:text="0" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/caw_otherfoods_layout_addcalories"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.2"
+                    android:layout_height="match_parent"
+                    android:weightSum="5"
+                    android:orientation="vertical">
+                    <Button
+                        android:id="@+id/caw_otherfoods_button_addcalories"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/caw_calories_add_button" />
+                    <Button
+                        android:id="@+id/caw_otherfoods_button_extend"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:background="@drawable/caw_show_foods_button" />
+                </LinearLayout>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/caw_otherfoods_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center"
+                />
+            <Button
+                android:id="@+id/caw_button_setexpectedcalories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Установить Суточную норму"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
