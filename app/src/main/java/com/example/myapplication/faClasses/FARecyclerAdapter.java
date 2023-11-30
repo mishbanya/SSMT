@@ -73,7 +73,7 @@ public class FARecyclerAdapter extends RecyclerView.Adapter<FARecyclerAdapter.Vi
             textViewCaloriesPer100g = itemView.findViewById(R.id.item_fa_textview_caloriesper100g);
             editTextWeight = itemView.findViewById(R.id.item_fa_edittext_weight);
             buttonAdd = itemView.findViewById(R.id.item_fa_button_add);
-
+            //TODO: кнопка должна создавать новую активность, где будем узнавать вес
             buttonAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -81,8 +81,9 @@ public class FARecyclerAdapter extends RecyclerView.Adapter<FARecyclerAdapter.Vi
                     if (position != RecyclerView.NO_POSITION && clickListener != null) {
 
                         Food food = foods.get(position);
+                        //TODO: Проверка на пустоту
                         int weight = Integer.parseInt(Objects.requireNonNull(editTextWeight.getText()).toString());
-                        Meal meal = new Meal(food.getName(), food.getCaloriesper100g(), weight, mealTypeFlag, mealIDFlag);
+                        Meal meal = new Meal(food, weight, mealTypeFlag, mealIDFlag);
                         clickListener.onItemClick(meal);
                     }
                 }

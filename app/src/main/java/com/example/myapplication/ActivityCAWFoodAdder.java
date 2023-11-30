@@ -41,11 +41,11 @@ public class ActivityCAWFoodAdder extends AppCompatActivity implements FARecycle
     }
 
     public void fillFoods() {
-        foods.add(new Food("Картошка", 80, 1, 1, 1));
-        foods.add(new Food("Мясо", 200, 1, 1, 1));
-        foods.add(new Food("Рис", 100, 1, 1, 1));
-        foods.add(new Food("Курица", 150, 1, 1, 1));
-        foods.add(new Food("Гречка", 100, 1, 1, 1));
+        foods.add(new Food("Картошка", 80, 45, 1, 1));
+        foods.add(new Food("Мясо", 200, 56, 1, 1));
+        foods.add(new Food("Рис", 100, 23, 1, 1));
+        foods.add(new Food("Курица", 150, 34, 1, 1));
+        foods.add(new Food("Гречка", 100, 76, 1, 1));
         faRecyclerAdapter.FoodsAdded(5);
     }
 

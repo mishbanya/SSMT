@@ -19,7 +19,6 @@ public class CAWRecyclerAdapter extends RecyclerView.Adapter<CAWRecyclerAdapter.
     List<Meal> meals;
     private LayoutInflater Inflater;
 
-    //TODO: Реализация кнопок настроек (изменение/удаление/еды)
     public CAWRecyclerAdapter(Context context, List<Meal> dataList) {
         this.Inflater = LayoutInflater.from(context);
         this.meals = dataList;
@@ -35,7 +34,7 @@ public class CAWRecyclerAdapter extends RecyclerView.Adapter<CAWRecyclerAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         Meal data = meals.get(position);
         holder.textViewName.setText(data.getName());
-        holder.textViewCalories.setText(String.valueOf(data.getCalories()));
+        holder.textViewCalories.setText(String.valueOf((int)data.getCalories()));
     }
 
     @Override
@@ -49,6 +48,7 @@ public class CAWRecyclerAdapter extends RecyclerView.Adapter<CAWRecyclerAdapter.
         notifyItemRangeInserted(0, meals.size() - 1);
     }
     public static class ViewHolder extends RecyclerView.ViewHolder {
+        //TODO: Добавить БЖУ, вес, реализовать кнопки настроек (изменение/удаление/еды)
         TextView textViewName;
         TextView textViewCalories;
         ImageButton buttonOptions;

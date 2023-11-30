@@ -28,7 +28,7 @@ import java.time.LocalDate;
 public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickListener{
 
     private CAWMealsManager CAWMealsManager = new CAWMealsManager();
-    private CAWDailyMacrosManager TodayMacros = new CAWDailyMacrosManager(0,0,0,0, 2000, LocalDate.now());
+    private CAWDailyMacrosManager TodayMacros = new CAWDailyMacrosManager();
     private CAWRecyclerManager CAWrecyclerManager;
     private CAWDailyMacrosViewUpdaterManager todayMacrosViewUpdater;
 

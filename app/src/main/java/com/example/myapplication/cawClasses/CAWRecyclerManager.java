@@ -14,7 +14,6 @@ public class CAWRecyclerManager {
     CAWRecyclerAdapter lunchCAWRecyclerAdapter;
     CAWRecyclerAdapter dinnerCAWRecyclerAdapter;
     CAWRecyclerAdapter otherFoodsCAWRecyclerAdapter;
-    //TODO: Отображать вес в ресайклере; Реализация кнопок настроек (изменение/удаление/еды)
     public CAWRecyclerManager(View Fragment, CAWMealsManager CAWMealsManager, Context context) {
         RecyclerView BreakfastRecycler = Fragment.findViewById(R.id.caw_breakfast_recycler);
         RecyclerView LunchRecycler = Fragment.findViewById(R.id.caw_lunch_recycler);

@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-import java.io.Serializable;
-
 public class Meal extends Food implements Parcelable {
 
     public enum MealType {
@@ -18,9 +16,12 @@ public class Meal extends Food implements Parcelable {
     private int mealId;
     private int weight;
     private MealType mealType;
-    public Meal(String name, double caloriesper100g, int weight, MealType mealType, int mealId) {
-        this.name  = name;
-        this.caloriesper100g = caloriesper100g;
+    public Meal(Food food, int weight, MealType mealType, int mealId) {
+        this.name  = food.getName();
+        this.caloriesper100g = food.caloriesper100g;
+        this.proteinper100g = food.proteinper100g;
+        this.fatper100g = food.fatper100g;
+        this.carbper100g = food.carbper100g;
         this.weight = weight;
         this.mealType = mealType;
         this.mealId = mealId;
@@ -51,6 +52,9 @@ public class Meal extends Food implements Parcelable {
         name = in.readString();
         weight = in.readInt();
         caloriesper100g = in.readDouble();
+        proteinper100g = in.readDouble();
+        fatper100g = in.readDouble();
+        carbper100g = in.readDouble();
         mealId = in.readInt();
         switch (in.readString()){
             case "Breakfast":
@@ -88,6 +92,9 @@ public class Meal extends Food implements Parcelable {
         dest.writeString(name);
         dest.writeInt(weight);
         dest.writeDouble(caloriesper100g);
+        dest.writeDouble(proteinper100g);
+        dest.writeDouble(fatper100g);
+        dest.writeDouble(carbper100g);
         dest.writeInt(mealId);
         switch (mealType){
             case BREAKFAST:

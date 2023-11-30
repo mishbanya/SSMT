@@ -35,20 +35,23 @@ public class CAWDailyMacrosManager {
         this.lunchCalories = 0;
         this.dinnerCalories = 0;
         this.otherFoodsCalories = 0;
+        this.breakfastProtein = 0;
+        this.lunchProtein = 0;
+        this.dinnerProtein = 0;
+        this.otherFoodsProtein = 0;
+        this.breakfastFat = 0;
+        this.lunchFat = 0;
+        this.dinnerFat = 0;
+        this.otherFoodsFat = 0;
+        this.breakfastCarb = 0;
+        this.lunchCarb = 0;
+        this.dinnerCarb = 0;
+        this.otherFoodsCarb = 0;
         this.expectedCalories = 2000;
         this.Updater();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             this.date = LocalDate.now();
         }
-    }
-    public CAWDailyMacrosManager(int breakfastCalories, int lunchCalories, int dinnerCalories, int otherFoodsCalories, int expectedCalories, LocalDate date){
-        this.breakfastCalories = breakfastCalories;
-        this.lunchCalories = lunchCalories;
-        this.dinnerCalories = dinnerCalories;
-        this.otherFoodsCalories = otherFoodsCalories;
-        this.expectedCalories = expectedCalories;
-        this.Updater();
-        this.date = date;
     }
     public double getTotalCalories(){
         return this.totalCalories;
@@ -61,16 +64,19 @@ public class CAWDailyMacrosManager {
     public double getBreakfastProtein(){return this.breakfastProtein;}
     public double getLunchProtein(){return this.lunchProtein;}
     public double getDinnerProtein(){return this.dinnerProtein;}
+    public double getOtherFoodsProtein(){return this.otherFoodsProtein;}
 
     public double getTotalFat(){return this.totalFat;}
     public double getBreakfastFat(){return this.breakfastFat;}
     public double getLunchFat(){return this.lunchFat;}
     public double getDinnerFat(){return this.dinnerFat;}
+    public double getOtherFoodsFat(){return this.otherFoodsFat;}
 
     public double getTotalCarb(){return this.totalCarb;}
     public double getBreakfastCarb(){return this.breakfastCarb;}
     public double getLunchCarb(){return this.lunchCarb;}
     public double getDinnerCarb(){return this.dinnerCarb;}
+    public double getOtherFoodsCarb(){return this.otherFoodsCarb;}
 
     public double getExpectedCalories(){
         return this.expectedCalories;
