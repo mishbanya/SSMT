@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -9,6 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.myapplication.Fragments.FragmentCaloriesAndWeight;
+import com.example.myapplication.Fragments.FragmentGym;
+import com.example.myapplication.Fragments.FragmentSocials;
+import com.example.myapplication.R;
 
 public class ActivityMainPage extends AppCompatActivity implements
         View.OnClickListener {

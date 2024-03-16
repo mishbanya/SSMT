@@ -13,7 +13,7 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityCAWFoodAdder"
+            android:name=".Activities.ActivityCAWFoodAdder"
             android:exported="false">
             <intent-filter>
                 <action android:name=".ActivityCAWFoodAdder" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityMainPage"
+            android:name=".Activities.ActivityMainPage"
             android:exported="false"
             android:theme="@style/Theme.MyApplication">
             <intent-filter>
@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ActivityLogin"
+            android:name=".Activities.ActivityLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

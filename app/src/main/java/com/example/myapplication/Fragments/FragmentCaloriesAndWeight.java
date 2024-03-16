@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Fragments;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -16,15 +16,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.Activities.ActivityCAWFoodAdder;
+import com.example.myapplication.R;
 import com.example.myapplication.cawClasses.CAWDailyMacrosManager;
 import com.example.myapplication.cawClasses.CAWDailyMacrosViewUpdaterManager;
 import com.example.myapplication.cawClasses.Meal;
 import com.example.myapplication.cawClasses.CAWMealsManager;
 import com.example.myapplication.cawClasses.CAWRecyclerManager;
 
-import java.time.LocalDate;
-
-
+//TODO: делаем sharedpreference класс, сохраняем коллории этого дня
 public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickListener{
 
     private CAWMealsManager CAWMealsManager = new CAWMealsManager();

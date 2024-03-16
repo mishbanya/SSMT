@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.myapplication.R;
 import com.example.myapplication.cawClasses.Food;
 import com.example.myapplication.cawClasses.Meal;
 import com.example.myapplication.faClasses.FARecyclerAdapter;
