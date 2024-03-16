@@ -18,7 +18,7 @@ public class ActivityCAWFoodAdder extends AppCompatActivity implements FARecycle
 
     private List<Food> foods;
     private FARecyclerAdapter faRecyclerAdapter;
-
+    //TODO: Поиск по списку
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

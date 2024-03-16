@@ -62,7 +62,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:gravity="center"
-                    android:text="Всего"
+                    android:text="@string/caw_total"
                     android:textSize="20sp" />
 
                 <ProgressBar
@@ -84,7 +84,7 @@
                     android:autoSizeMinTextSize="10sp"
                     android:autoSizeMaxTextSize="20sp"
                     android:gravity="center"
-                    android:text="0 из 2000" />
+                    android:text="@string/caw_total_counter" />
 
             </LinearLayout>
             <LinearLayout
@@ -99,7 +99,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Б"/>
+                    android:text="@string/protein"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -108,12 +108,12 @@
                     android:id="@+id/caw_textview_totalprotein"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_marginEnd="20dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ж"/>
+                    android:text="@string/fats"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,12 +122,12 @@
                     android:id="@+id/caw_textview_totalfat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    android:text="@string/zero"
                     android:layout_marginEnd="20dp"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="У"/>
+                    android:text="@string/carbs"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
                     android:id="@+id/caw_textview_totalcarb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"/>
+                    android:text="@string/zero"/>
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/caw_layout_breakfast"
@@ -164,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Завтрак"
+                        android:text="@string/caw_breakfast"
                         android:textSize="20sp"
                         android:typeface="monospace" />
                     <View
@@ -185,7 +185,7 @@
                             android:id="@+id/caw_breakfast_textview_protein"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
                             android:id="@+id/caw_breakfast_textview_fat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -205,7 +205,7 @@
                             android:id="@+id/caw_breakfast_textview_carb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"/>
+                            android:text="@string/zero"/>
                     </LinearLayout>
 
                     <TextView
@@ -215,7 +215,7 @@
                         android:typeface="monospace"
                         android:gravity="center"
                         android:textSize="20sp"
-                        android:text="0" />
+                        android:text="@string/zero" />
 
                 </LinearLayout>
                 <LinearLayout
@@ -273,7 +273,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Обед"
+                        android:text="@string/caw_lunch"
                         android:textSize="20sp"
                         android:typeface="monospace" />
                     <View
@@ -294,7 +294,7 @@
                             android:id="@+id/caw_lunch_textview_protein"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -304,7 +304,7 @@
                             android:id="@+id/caw_lunch_textview_fat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -314,7 +314,7 @@
                             android:id="@+id/caw_lunch_textview_carb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"/>
+                            android:text="@string/zero"/>
                     </LinearLayout>
 
                     <TextView
@@ -324,7 +324,7 @@
                         android:typeface="monospace"
                         android:gravity="center"
                         android:textSize="20sp"
-                        android:text="0" />
+                        android:text="@string/zero" />
 
                 </LinearLayout>
 
@@ -382,7 +382,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Ужин"
+                        android:text="@string/caw_dinner"
                         android:textSize="20sp"
                         android:typeface="monospace" />
                     <View
@@ -403,7 +403,7 @@
                             android:id="@+id/caw_dinner_textview_protein"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -413,7 +413,7 @@
                             android:id="@+id/caw_dinner_textview_fat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -423,7 +423,7 @@
                             android:id="@+id/caw_dinner_textview_carb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"/>
+                            android:text="@string/zero"/>
                     </LinearLayout>
 
                     <TextView
@@ -433,7 +433,7 @@
                         android:typeface="monospace"
                         android:gravity="center"
                         android:textSize="20sp"
-                        android:text="0" />
+                        android:text="@string/zero" />
 
                 </LinearLayout>
 
@@ -491,7 +491,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="Другое"
+                        android:text="@string/caw_other"
                         android:textSize="20sp"
                         android:typeface="monospace" />
                     <View
@@ -512,7 +512,7 @@
                             android:id="@+id/caw_otherfoods_textview_protein"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -522,7 +522,7 @@
                             android:id="@+id/caw_otherfoods_textview_fat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:layout_marginEnd="10dp"/>
                         <ImageView
                             android:layout_width="wrap_content"
@@ -532,7 +532,7 @@
                             android:id="@+id/caw_otherfoods_textview_carb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"/>
+                            android:text="@string/zero"/>
                     </LinearLayout>
 
                     <TextView
@@ -542,7 +542,7 @@
                         android:typeface="monospace"
                         android:gravity="center"
                         android:textSize="20sp"
-                        android:text="0" />
+                        android:text="@string/zero" />
 
                 </LinearLayout>
 
@@ -578,7 +578,7 @@
                 android:id="@+id/caw_button_setexpectedcalories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Установить Суточную норму"/>
+                android:text="@string/caw_setter"/>
 
         </LinearLayout>
     </LinearLayout>

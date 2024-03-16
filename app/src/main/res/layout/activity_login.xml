@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="302dp"
-        android:text="ENTRY"
+        android:text="@string/login_entry"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,7 +21,7 @@
         android:layout_width="235dp"
         android:layout_height="78dp"
         android:layout_marginTop="172dp"
-        android:hint="Enter your password"
+        android:hint="@string/login_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         android:layout_width="235dp"
         android:layout_height="78dp"
         android:layout_marginTop="72dp"
-        android:hint="Enter your login"
+        android:hint="@string/login_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

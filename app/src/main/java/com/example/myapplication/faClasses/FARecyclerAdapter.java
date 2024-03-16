@@ -73,7 +73,6 @@ public class FARecyclerAdapter extends RecyclerView.Adapter<FARecyclerAdapter.Vi
             textViewCaloriesPer100g = itemView.findViewById(R.id.item_fa_textview_caloriesper100g);
             editTextWeight = itemView.findViewById(R.id.item_fa_edittext_weight);
             buttonAdd = itemView.findViewById(R.id.item_fa_button_add);
-            //TODO: кнопка должна создавать новую активность, где будем узнавать вес
             buttonAdd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

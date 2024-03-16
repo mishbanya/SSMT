@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/main_page_buttons_active"
-                android:text="PAGE 1" />
+                android:text="@string/main_caw" />
 
             <View
                 android:layout_width="1dp"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/main_page_buttons"
-                android:text="PAGE 2" />
+                android:text="@string/main_exersises" />
 
             <View
                 android:layout_width="1dp"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/main_page_buttons"
-                android:text="PAGE 3" />
+                android:text="@string/main_profile" />
 
         </LinearLayout>
     </LinearLayout>

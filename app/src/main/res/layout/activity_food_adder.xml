@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ActivityCAWFoodAdder"
     android:layout_width="match_parent"
@@ -13,5 +13,5 @@
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-</LinearLayout>
+    
+</ScrollView>

@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="title_activity_main2">MainActivity2</string>
+    <string name="app_name">SSMT</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -43,7 +43,30 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="title_activity_page1">page1</string>
-    <!-- TODO: Переписать все стринги-->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="zero">0</string>
+    <string name="protein">Б</string>
+    <string name="fats">Ж</string>
+    <string name="carbs">У</string>
+
+    <string name="login_login">Логин</string>
+    <string name="login_password">Пароль</string>
+    <string name="login_entry">Вход</string>
+
+    <string name="main_caw">Еда</string>
+    <string name="main_exersises">Упражнения</string>
+    <string name="main_profile">Профиль</string>
+
+    <string name="caw_total">Всего</string>
+    <string name="caw_total_counter">0 из 2000</string>
+    <string name="caw_breakfast">Завтрак</string>
+    <string name="caw_lunch">Обед</string>
+    <string name="caw_dinner">Ужин</string>
+    <string name="caw_other">Другое</string>
+    <string name="caw_setter">Установить Суточную норму</string>
+
+    <string name="item_fa_kcal">ккал</string>
+    <string name="item_fa_weight">вес</string>
+    <string name="item_fa_add">Добавить</string>
+
 </resources>
