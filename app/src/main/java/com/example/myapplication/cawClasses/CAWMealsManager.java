@@ -1,6 +1,8 @@
 package com.example.myapplication.cawClasses;
 
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,18 +14,20 @@ public class CAWMealsManager {
 
     private List<Meal> allMeals;
 
-    public CAWMealsManager(List<Meal> breakfastMeals, List<Meal> lunchMeals, List<Meal> dinnerMeals, List<Meal> otherFoodsMeals) {
-        this.breakfastMeals = breakfastMeals;
-        this.lunchMeals = lunchMeals;
-        this.dinnerMeals = dinnerMeals;
-        this.otherFoodsMeals = otherFoodsMeals;
-        updateAllMeals();
-    }
-    public CAWMealsManager() {
+    Context context;
+    MealsPrefManager prefManager;
+
+    public CAWMealsManager(Context context) {
+        this.context = context;
+        prefManager = new MealsPrefManager(context);
+        List<Meal> mealsfrompref = prefManager.getMeals();
         breakfastMeals = new ArrayList<>();
         lunchMeals = new ArrayList<>();
         dinnerMeals = new ArrayList<>();
         otherFoodsMeals = new ArrayList<>();
+        for(Meal meal : mealsfrompref){
+            this.addMeal(meal);
+        }
         updateAllMeals();
     }
     public List<Meal> getBreakfastMeals() {
@@ -64,6 +68,7 @@ public class CAWMealsManager {
                 break;
         }
         allMeals.add(meal);
+        prefManager.addMeal(meal);
     }
     public void removeMeal(int mealID){
         for (Meal meal : allMeals) {
@@ -86,5 +91,6 @@ public class CAWMealsManager {
                 break;
             }
         }
+        prefManager.removeMeal(mealID);
     }
 }

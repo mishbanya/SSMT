@@ -28,7 +28,7 @@ import com.example.myapplication.cawClasses.CAWRecyclerManager;
 //TODO: делаем sharedpreference класс, сохраняем коллории этого дня
 public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickListener{
 
-    private CAWMealsManager CAWMealsManager = new CAWMealsManager();
+    private CAWMealsManager CAWMealsManager;
     private CAWDailyMacrosManager TodayMacros = new CAWDailyMacrosManager();
     private CAWRecyclerManager CAWrecyclerManager;
     private CAWDailyMacrosViewUpdaterManager todayMacrosViewUpdater;
@@ -53,7 +53,10 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View FragmentCAW = inflater.inflate(R.layout.fragment_calories_and_weight, container, false);
+
+        CAWMealsManager = new CAWMealsManager(requireContext());
         //TODO: CAWButtonManager
+
         Button ButtonGraph = FragmentCAW.findViewById(R.id.caw_button_graph);
 
         ButtonGraph.setOnClickListener(this);
