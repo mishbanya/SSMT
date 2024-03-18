@@ -47,7 +47,6 @@ public class Meal extends Food implements Parcelable {
     public double getFat() {return fatper100g * weight / 100;}
     public double getCarb() {return carbper100g * weight / 100;}
 
-
     protected Meal(Parcel in) {
         name = in.readString();
         weight = in.readInt();
