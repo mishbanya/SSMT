@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.myapplication.Activities.ActivityCAWFoodAdder;
@@ -57,9 +58,11 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
         CAWMealsManager = new CAWMealsManager(requireContext());
         //TODO: CAWButtonManager
 
-        Button ButtonGraph = FragmentCAW.findViewById(R.id.caw_button_graph);
-
-        ButtonGraph.setOnClickListener(this);
+        ImageButton ButtonGraph = FragmentCAW.findViewById(R.id.caw_button_graph);
+        ButtonGraph.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), ActivityGraphs.class);
+            startActivity(intent);
+        });
 
         Button BreakfastButtonExtend = FragmentCAW.findViewById(R.id.caw_breakfast_button_extend);
         Button LunchButtonExtend = FragmentCAW.findViewById(R.id.caw_lunch_button_extend);
@@ -120,9 +123,6 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
             startCAWAdderActivity(Meal.MealType.OTHERFOODS, CAWMealsManager.getMealsCount());
         } else if (buttonId == R.id.caw_button_setexpectedcalories){
             expectedCaloriesEditingDialog();
-        } else if (buttonId == R.id.caw_button_graph) {
-            Intent intent = new Intent(requireContext(), ActivityGraphs.class);
-            startActivity(intent);
         }
     }
 

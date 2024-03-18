@@ -25,8 +25,10 @@ public class CAWMealsManager {
         lunchMeals = new ArrayList<>();
         dinnerMeals = new ArrayList<>();
         otherFoodsMeals = new ArrayList<>();
+        allMeals = new ArrayList<>();
         for(Meal meal : mealsfrompref){
             this.addMeal(meal);
+            prefManager.removeMeal(meal.getMealId());
         }
         updateAllMeals();
     }
