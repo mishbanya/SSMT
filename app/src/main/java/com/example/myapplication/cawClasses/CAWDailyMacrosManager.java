@@ -1,9 +1,9 @@
 package com.example.myapplication.cawClasses;
 
 
-import android.os.Build;
+import android.content.Context;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 
 public class CAWDailyMacrosManager {
     private double totalCalories;
@@ -29,29 +29,48 @@ public class CAWDailyMacrosManager {
     private double dinnerCarb;
     private double otherFoodsCarb;
 
-    private LocalDate date;
-    public CAWDailyMacrosManager(){
-        this.breakfastCalories = 0;
-        this.lunchCalories = 0;
-        this.dinnerCalories = 0;
-        this.otherFoodsCalories = 0;
-        this.breakfastProtein = 0;
-        this.lunchProtein = 0;
-        this.dinnerProtein = 0;
-        this.otherFoodsProtein = 0;
-        this.breakfastFat = 0;
-        this.lunchFat = 0;
-        this.dinnerFat = 0;
-        this.otherFoodsFat = 0;
-        this.breakfastCarb = 0;
-        this.lunchCarb = 0;
-        this.dinnerCarb = 0;
-        this.otherFoodsCarb = 0;
-        this.expectedCalories = 2000;
-        this.Updater();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            this.date = LocalDate.now();
+    public CAWDailyMacrosManager(Context context) {
+        MacrosPrefManager prefManager = new MacrosPrefManager(context);
+        //prefManager.removeMacros();
+        CAWDailyMacrosManager dailyMacrosManager = prefManager.getMacros();
+        if(dailyMacrosManager!=null) {
+            this.breakfastCalories = dailyMacrosManager.breakfastCalories;
+            this.breakfastProtein = dailyMacrosManager.breakfastProtein;
+            this.breakfastFat = dailyMacrosManager.breakfastFat;
+            this.breakfastCarb = dailyMacrosManager.breakfastCarb;
+            this.lunchCalories = dailyMacrosManager.lunchCalories;
+            this.lunchProtein = dailyMacrosManager.lunchProtein;
+            this.lunchFat = dailyMacrosManager.lunchFat;
+            this.lunchCarb = dailyMacrosManager.lunchCarb;
+            this.dinnerCalories = dailyMacrosManager.dinnerCalories;
+            this.dinnerProtein = dailyMacrosManager.dinnerProtein;
+            this.dinnerFat = dailyMacrosManager.dinnerFat;
+            this.dinnerCarb = dailyMacrosManager.dinnerCarb;
+            this.otherFoodsCalories = dailyMacrosManager.otherFoodsCalories;
+            this.otherFoodsProtein = dailyMacrosManager.otherFoodsProtein;
+            this.otherFoodsFat = dailyMacrosManager.otherFoodsFat;
+            this.otherFoodsCarb = dailyMacrosManager.otherFoodsCarb;
+            this.expectedCalories = dailyMacrosManager.expectedCalories;
+        }else {
+            this.breakfastCalories = 0;
+            this.lunchCalories = 0;
+            this.dinnerCalories = 0;
+            this.otherFoodsCalories = 0;
+            this.breakfastProtein = 0;
+            this.lunchProtein = 0;
+            this.dinnerProtein = 0;
+            this.otherFoodsProtein = 0;
+            this.breakfastFat = 0;
+            this.lunchFat = 0;
+            this.dinnerFat = 0;
+            this.otherFoodsFat = 0;
+            this.breakfastCarb = 0;
+            this.lunchCarb = 0;
+            this.dinnerCarb = 0;
+            this.otherFoodsCarb = 0;
+            this.expectedCalories = 2000;
         }
+        this.Updater(context);
     }
     public double getTotalCalories(){
         return this.totalCalories;
@@ -82,16 +101,11 @@ public class CAWDailyMacrosManager {
         return this.expectedCalories;
     }
     public double getProgress(){ return this.totalCalories / (double)this.expectedCalories * 100;}
-    public LocalDate getDate(){
-        return this.date;
-    }
-    public void setExpectedCalories(int expectedCalories){
+    public void setExpectedCalories(int expectedCalories, Context context){
         this.expectedCalories = expectedCalories;
+        Updater(context);
     }
-    public void setDate(LocalDate date){
-        this.date = date;
-    }
-    public void addMealMacros(Meal meal){
+    public void addMealMacros(Meal meal, Context context){
         switch (meal.getMealType()){
             case BREAKFAST:
                 this.breakfastCalories += meal.getCalories();
@@ -118,12 +132,14 @@ public class CAWDailyMacrosManager {
                 this.otherFoodsCarb += meal.getCarb();
                 break;
         }
-        Updater();
+        Updater(context);
     }
-    public void Updater(){
+    public void Updater(Context context){
         this.totalCalories = this.breakfastCalories + this.lunchCalories + this.dinnerCalories + this.otherFoodsCalories;
         this.totalProtein = this.breakfastProtein + this.lunchProtein + this.dinnerProtein + this.otherFoodsProtein;
         this.totalFat = this.breakfastFat + this.lunchFat + this.dinnerFat + this.otherFoodsFat;
         this.totalCarb = this.breakfastCarb + this.lunchCarb + this.dinnerCarb + this.otherFoodsCarb;
+        MacrosPrefManager prefManager = new MacrosPrefManager(context);
+        prefManager.saveMacros(this);
     }
 }

@@ -30,7 +30,7 @@ import com.example.myapplication.cawClasses.CAWRecyclerManager;
 public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickListener{
 
     private CAWMealsManager CAWMealsManager;
-    private CAWDailyMacrosManager TodayMacros = new CAWDailyMacrosManager();
+    private CAWDailyMacrosManager TodayMacros;
     private CAWRecyclerManager CAWrecyclerManager;
     private CAWDailyMacrosViewUpdaterManager todayMacrosViewUpdater;
 
@@ -42,7 +42,7 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
                     if (data != null) {
                         Meal returnedMeal = data.getParcelableExtra("meal");
                         assert returnedMeal != null;
-                        TodayMacros.addMealMacros(returnedMeal);
+                        TodayMacros.addMealMacros(returnedMeal, requireContext());
                         todayMacrosViewUpdater.updateViewOfTodayCalories();
                         CAWMealsManager.addMeal(returnedMeal);
                         CAWrecyclerManager.mealAdded(returnedMeal);
@@ -56,6 +56,7 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
         View FragmentCAW = inflater.inflate(R.layout.fragment_calories_and_weight, container, false);
 
         CAWMealsManager = new CAWMealsManager(requireContext());
+        TodayMacros =  new CAWDailyMacrosManager(requireContext());
         //TODO: CAWButtonManager
 
         ImageButton ButtonGraph = FragmentCAW.findViewById(R.id.caw_button_graph);
@@ -142,7 +143,7 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
             if (name.equals("")) {
                 makeAToastMsg("Поле не может быть пустым");
             } else {
-                TodayMacros.setExpectedCalories(Integer.parseInt(name));
+                TodayMacros.setExpectedCalories(Integer.parseInt(name), requireContext());
                 todayMacrosViewUpdater.updateViewOfTodayCalories();
             }
         });

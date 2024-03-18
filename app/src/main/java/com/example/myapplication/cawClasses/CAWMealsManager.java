@@ -20,6 +20,7 @@ public class CAWMealsManager {
     public CAWMealsManager(Context context) {
         this.context = context;
         prefManager = new MealsPrefManager(context);
+        //prefManager.removeAllMeals();
         List<Meal> mealsfrompref = prefManager.getMeals();
         breakfastMeals = new ArrayList<>();
         lunchMeals = new ArrayList<>();
