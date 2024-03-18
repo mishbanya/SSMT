@@ -15,25 +15,11 @@
             android:id="@+id/caw_layout_statsbuttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
+            android:orientation="horizontal">
             <ImageButton
-                android:id="@+id/caw_button_dailystats"
-                android:layout_width="0dp"
+                android:id="@+id/caw_button_graph"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_weight="1"
-                android:scaleType="center"
-                android:src="@drawable/caw_daily_stats" />
-            <View
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="@color/black" />
-            <ImageButton
-                android:id="@+id/caw_button_graphs"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_weight="1"
                 android:src="@drawable/caw_graphs" />
 
         </LinearLayout>

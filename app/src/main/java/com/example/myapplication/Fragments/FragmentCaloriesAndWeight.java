@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.Activities.ActivityCAWFoodAdder;
+import com.example.myapplication.Activities.ActivityGraphs;
 import com.example.myapplication.R;
 import com.example.myapplication.cawClasses.CAWDailyMacrosManager;
 import com.example.myapplication.cawClasses.CAWDailyMacrosViewUpdaterManager;
@@ -53,6 +54,10 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
                              Bundle savedInstanceState) {
         View FragmentCAW = inflater.inflate(R.layout.fragment_calories_and_weight, container, false);
         //TODO: CAWButtonManager
+        Button ButtonGraph = FragmentCAW.findViewById(R.id.caw_button_graph);
+
+        ButtonGraph.setOnClickListener(this);
+
         Button BreakfastButtonExtend = FragmentCAW.findViewById(R.id.caw_breakfast_button_extend);
         Button LunchButtonExtend = FragmentCAW.findViewById(R.id.caw_lunch_button_extend);
         Button DinnerButtonExtend = FragmentCAW.findViewById(R.id.caw_dinner_button_extend);
@@ -110,9 +115,11 @@ public class FragmentCaloriesAndWeight extends Fragment implements View.OnClickL
             startCAWAdderActivity(Meal.MealType.DINNER, CAWMealsManager.getMealsCount());
         } else if (buttonId == R.id.caw_otherfoods_button_addcalories) {
             startCAWAdderActivity(Meal.MealType.OTHERFOODS, CAWMealsManager.getMealsCount());
-        }
-        else if (buttonId == R.id.caw_button_setexpectedcalories){
+        } else if (buttonId == R.id.caw_button_setexpectedcalories){
             expectedCaloriesEditingDialog();
+        } else if (buttonId == R.id.caw_button_graph) {
+            Intent intent = new Intent(requireContext(), ActivityGraphs.class);
+            startActivity(intent);
         }
     }
 
